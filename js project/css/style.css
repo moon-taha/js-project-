@@ -1,0 +1,96 @@
+#preloader{
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+
+}
+
+.circle{
+	height: 100px;
+	width: 100px;
+	border-top: 10px solid red;
+	border-radius: 100%;
+	position: relative;
+	animation: loading linear infinite ;
+	animation-duration: .75s;
+	z-index: 9999;
+	position: relative;
+}
+
+.circle::before{
+    content: '';
+    height: 100px;
+    width: 100px;
+    border-top: 10px solid brown;
+    border-radius: 100%;
+    position: absolute;
+    top: -10px;
+    transform: rotate(118deg);
+}
+.circle::after {
+    content: '';
+    height: 100px;
+    border-radius: 100%;
+    width: 100px;
+    border-top: 10px solid blue;
+    position: absolute;
+    top: -11px;
+    transform: rotate(237deg);
+}
+
+@keyframes loading{
+ 
+ from{
+ 	transform: rotate(0deg);
+    transition: 0.5s;
+ }
+ to{
+ 	transform: rotate(360deg);
+ 	transition: 0.5s;
+ }
+}
+
+
+.card{
+	width: 400px;
+	margin: auto;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border: none;
+	background-color: skyblue;
+}
+.display{
+    width: 100%;
+    display: block;
+    padding: 18px;
+    font-size: 16px;
+    margin-bottom: 16px;
+    border:none;
+}
+/*.btns{
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	/*column-gap: 5px;
+	row-gap: 10px;*/
+/*}*/
+
+.btns{
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+}
+input[type="button"]{
+    background-color: lightgreen;
+    font-size: 16px;
+    border: none;
+    padding: 4px;
+    border-radius: 2px;
+}
+input[type="button"]:hover{
+	cursor: pointer;
+	background-color: seagreen;
+}
